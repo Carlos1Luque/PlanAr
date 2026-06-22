@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Funcionalidad 1: Reservar Lugar
     const botonesReservar = document.querySelectorAll(".btn-reservar");
     const mensajeReserva = document.getElementById("mensaje-reserva");
 
