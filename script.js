@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+    // Funcionalidad 1: Reservar Lugar
     const botonesReservar = document.querySelectorAll(".btn-reservar");
     const mensajeReserva = document.getElementById("mensaje-reserva");
 
@@ -7,9 +8,23 @@ document.addEventListener("DOMContentLoaded", () => {
             mensajeReserva.textContent = "¡Reserva realizada correctamente!";
             mensajeReserva.classList.remove("oculto");
             
-            // Opcional: Ocultar el mensaje después de 3 segundos
             setTimeout(() => {
                 mensajeReserva.classList.add("oculto");
             }, 3000);
         });
     });
+    const categorias = ["Conciertos", "Ferias", "Deportes"];
+    const btnCategorias = document.getElementById("btn-categorias");
+    const listaCategorias = document.getElementById("lista-categorias");
+
+    btnCategorias.addEventListener("click", () => {
+        listaCategorias.innerHTML = ""; 
+
+        categorias.forEach(cat => {
+            const span = document.createElement("span");
+            span.textContent = cat;
+            span.classList.add("categoria-item");
+            listaCategorias.appendChild(span);
+        });
+    });
+});
